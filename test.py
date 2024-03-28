@@ -33,27 +33,32 @@ insert_statement = """
     INSERT INTO NGUOIDUNG
     VALUES (?,?)
 """
+# first ? is string with size for id = 5, second ? is 30 maximum size string for name 
 update_name_statement = """
     UPDATE NGUOIDUNG
     SET HOTEN = ?
     WHERE ID = ?
 """
+# first ? is the name you want to change to, second ? is for the person with that id to change that person's name
 
 update_id_statement = """
     UPDATE NGUOIDUNG
     SET ID = ?
     WHERE HOTEN = ?
 """
+# similar to update_name_statement but reverse
 
 delete_statement = """
     DELETE FROM NGUOIDUNG
     WHERE ID = ?
 """
+# ? for the id of the person you want to delete from data base
 select_statement = """
     SELECT*
     FROM NGUOIDUNG
     WHERE ID = ?
 """
+# ? for the id of the person you want to get information
 
 def insert(data):
     if all(isinstance(sub_data, list) for sub_data in data):
